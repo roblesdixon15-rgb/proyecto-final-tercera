@@ -1,0 +1,446 @@
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL Y RESETEO
+   ========================================== */
+
+/* Seleccionamos todos los elementos de la página para quitar márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuramos el cuerpo principal de la página: fondo oscuro futurista y tipografía moderna */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0f19; /* Fondo negro azulado muy oscuro tipo gamer */
+    color: #e0e6ed;            /* Color de texto principal en gris claro brillante */
+    line-height: 1.6;          /* Espaciado cómodo entre líneas de texto */
+}
+
+/* ==========================================
+   2. ENCABEZADO Y MENÚ DE NAVEGACIÓN
+   ========================================== */
+
+/* Caja principal del header pegada arriba con efecto translúcido */
+.header-principal {
+    background-color: rgba(11, 15, 25, 0.95); /* Negro oscuro semitransparente */
+    border-bottom: 2px solid #00f0ff;          /* Línea inferior brillante en azul neón */
+    position: sticky;                          /* Se mantiene fija arriba al hacer scroll */
+    top: 0;
+    z-index: 1000;                             /* Asegura que esté por encima de todo */
+}
+
+/* Contenedor interno para alinear el logo y los enlaces */
+.contenedor-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Estilo del logotipo */
+.logo h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+/* Estilo para resaltar una palabra del logo con azul neón */
+.logo span {
+    color: #00f0ff;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); /* Efecto de brillo neón */
+}
+
+/* Menú de navegación horizontal */
+.nav-menu {
+    display: flex;
+    gap: 2rem; /* Separación entre cada enlace */
+}
+
+/* Estilo de los enlaces del menú */
+.nav-menu a {
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces del menú */
+.nav-menu a:hover {
+    color: #00f0ff;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.8);
+}
+
+/* Botón hamburguesa (oculto por defecto en pantallas grandes) */
+.hamburguesa {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Las tres líneas del botón hamburguesa */
+.hamburguesa span {
+    width: 25px;
+    height: 3px;
+    background-color: #00f0ff;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   3. SECCIÓN DE PORTADA (HERO SECTION)
+   ========================================== */
+
+.portada {
+    background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.9)), url('../img/fondo-portada.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    border-bottom: 2px solid #1e293b;
+}
+
+.portada-contenido h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.portada-contenido p {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* ==========================================
+   4. BOTONES GENERALES ESTILIZADOS
+   ========================================== */
+
+.boton {
+    display: inline-block;
+    background: linear-gradient(135deg, #00f0ff, #0077ff); /* Degradado futurista azul */
+    color: #0b0f19;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al pasar el mouse por encima del botón */
+.boton:hover {
+    transform: translateY(-2px); /* Eleva un poquito el botón */
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.8); /* Aumenta el brillo neón */
+}
+
+/* ==========================================
+   5. SECCIONES Y TARJETAS DINÁMICAS (INDEX Y PROGRAMA)
+   ========================================== */
+
+.seccion-juegos, .seccion-servicios, .seccion-nosotros, .seccion-contacto, .seccion-galeria {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.seccion-juegos h2, .seccion-servicios h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.seccion-juegos p {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor en cuadrícula para las tarjetas */
+.contenedor-tarjetas, .contenedor-servicios, .contenedor-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Se acomodan solas según la pantalla */
+    gap: 2rem;
+}
+
+/* Estilo individual de cada tarjeta (juegos o servicios) */
+.tarjeta-juego, .tarjeta-servicio, .item-galeria {
+    background-color: #131c2e; /* Fondo de tarjeta un poco más claro que el cuerpo */
+    border: 1px solid #1e293b;  /* Borde sutil */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto hover sobre las tarjetas */
+.tarjeta-juego:hover, .tarjeta-servicio:hover, .item-galeria:hover {
+    transform: translateY(-5px);
+    border-color: #00f0ff; /* El borde se vuelve azul neón al tocarlo */
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.1);
+}
+
+/* Imagen dentro de las tarjetas */
+.tarjeta-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Información interna de la tarjeta */
+.tarjeta-info {
+    padding: 1.5rem;
+}
+
+.tarjeta-info h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-info p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Etiqueta para destacar premios */
+.etiqueta-premio {
+    display: inline-block;
+    background-color: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+/* ==========================================
+   6. BANNERS INTERNOS Y FORMULARIO
+   ========================================== */
+
+.banner-interno {
+    background-color: #131c2e;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid #1e293b;
+}
+
+.banner-interno h2 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.banner-interno p {
+    color: #94a3b8;
+}
+
+/* Estilo para el formulario de inscripción */
+.formulario-inscripcion {
+    background-color: #131c2e;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-inscripcion h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.formulario-inscripcion p {
+    color: #94a3b8;
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e0e6ed;
+    font-weight: 500;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #0b0f19;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Efecto al hacer clic dentro de un campo de texto */
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+    outline: none;
+    border-color: #00f0ff;
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+/* ==========================================
+   7. PIE DE PÁGINA (FOOTER)
+   ========================================== */
+
+.footer-principal {
+    background-color: #07090f;
+    border-top: 2px solid #1e293b;
+    padding: 3rem 2rem 1rem 2rem;
+    margin-top: 4rem;
+}
+
+.contenedor-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-info h3, .footer-enlaces h4, .footer-redes h4 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.footer-info p, .footer-enlaces a, .footer-redes a {
+    color: #94a3b8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-enlaces a:hover, .footer-redes a:hover {
+    color: #00f0ff;
+}
+
+.footer-derechos {
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    padding-top: 1.5rem;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
+   8. DISEÑO RESPONSIVO (MÓVILES)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0b0f19;
+        padding: 1.5rem;
+        border-bottom: 2px solid #00f0ff;
+        text-align: center;
+    }
+
+    .nav-menu.activo {
+        display: flex;
+    }
+
+    .portada-contenido h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================
+   9. ESTILOS DEL ACORDEÓN DE PREGUNTAS (FAQ)
+   ========================================== */
+
+.bloque-faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.item-acordeon {
+    background-color: #131c2e;
+    border: 1px solid #1e293b;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.item-acordeon:hover {
+    border-color: #00f0ff;
+}
+
+/* Botón de la pregunta que se presiona */
+.pregunta-acordeon {
+    width: 100%;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    padding: 1.2rem;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pregunta-acordeon span {
+    color: #00f0ff;
+    transition: transform 0.3s ease;
+}
+
+/* Contenedor de la respuesta: OCULTO POR DEFECTO */
+.respuesta-acordeon {
+    max-height: 0;               /* Altura en cero para que no se vea nada al cargar */
+    overflow: hidden;            /* Oculta cualquier contenido que rebase la altura cero */
+    visibility: hidden;          /* Evita que los textos ocultos interfieran visualmente */
+    transition: max-height 0.3s ease-out, padding 0.3s ease, visibility 0.3s ease;
+    background-color: #0b0f19;
+    padding: 0 1.2rem;
+}
+
+.respuesta-acordeon p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ==========================================
+   ESTADOS ACTIVOS (CUANDO SE HACE CLIC)
+   ========================================== */
+
+.item-acordeon.activo .respuesta-acordeon {
+    max-height: 150px;           /* Permite expandir el contenedor suavemente */
+    visibility: visible;         /* Hace visible el texto */
+    padding: 1.2rem;             /* Restaura el relleno interno */
+}
+
+.item-acordeon.activo .pregunta-acordeon span {
+    transform: rotate(180deg);   /* Rota la flechita hacia arriba */
+}
