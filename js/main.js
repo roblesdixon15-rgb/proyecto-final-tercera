@@ -15,25 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-   // 2. Generación Dinámica de Tarjetas de Videojuegos
+    // 2. Generación Dinámica de Tarjetas (con los nombres con guion de tu carpeta y FC27)
     const juegosTorneo = [
         {
             titulo: "GTA VI",
             descripcion: "Competencia de velocidad y misiones contrarreloj en las calles de Vice City.",
             premio: "Premio: $1,500 USD",
-            imagen: "/proyectos/proyecto final tercera/img/juego1.jpg"
+            imagen: "img/juego-1.webp"
         },
         {
             titulo: "God of War Ragnarök",
             descripcion: "Combates cerrados de habilidad, reflejos y estrategia pura en la arena 1v1.",
             premio: "Premio: $800 USD",
-            imagen: "/proyectos/proyecto final tercera/img/juego2.jpg"
+            imagen: "img/juego-2.AVIF"
         },
         {
-            titulo: "Zelda: ocarina of Time",
-            descripcion: "Supervivencia y exploración táctica en un entorno abierto desafiante.",
-            premio: "Premio: $2,000 USD",
-            imagen: "/proyectos/proyecto final tercera/img/juego3.jpg"
+            titulo: "FC27",
+            descripcion: "Demuestra tus tácticas, goles y jugadas maestras en el mejor torneo de fútbol virtual.",
+            premio: "Premio: $1,000 USD",
+            imagen: "img/juego-3.jpg"
         }
     ];
 
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Controlador del Acordeón de Preguntas Frecuentes (Modo Exclusivo: solo una abierta a la vez)
+    // 3. Controlador del Acordeón de Preguntas Frecuentes (Modo Exclusivo)
     const botonesAcordeon = document.querySelectorAll('.pregunta-acordeon');
 
     if (botonesAcordeon.length > 0) {
@@ -68,13 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itemActual = boton.parentElement;
                 const estaActivo = itemActual.classList.contains('activo');
 
-                // Cerramos todos los elementos del acordeón
                 const todosLosItems = document.querySelectorAll('.item-acordeon');
                 todosLosItems.forEach(item => {
                     item.classList.remove('activo');
                 });
 
-                // Si el elemento no estaba activo, lo abrimos exclusivamente
                 if (!estaActivo) {
                     itemActual.classList.add('activo');
                 }
