@@ -18,44 +18,47 @@ include 'header.php';
 
     <!-- 6. Sección principal donde se organizará la cuadrícula con las fotografías -->
     <section class="seccion-galeria">
-        <!-- 7. Contenedor para alinear y distribuir ordenadamente los elementos de la galería -->
+        <!-- 7. Contenedor para alinear y distribuir ordenadamente los elementos de la galería en formato grid -->
         <div class="contenedor-galeria">
 
-            <!-- 8. Primer elemento o tarjeta individual de la galería -->
+            <!-- 8. Primer elemento o tarjeta individual de la galería: Escenario Principal -->
             <div class="item-galeria">
                 <div class="caja-imagen-galeria">
-                    <!-- Espacio visual simulado para la primera foto del evento -->
-                    <div style="background: #111; height: 200px; display: flex; align-items: center; justify-content: center; color: #00ffff; font-weight: bold;">[ Escenario Principal ]</div>
+                    <!-- Insertamos la etiqueta img apuntando a la foto del escenario usando la clase CSS tarjet-img para un ajuste perfecto -->
+                    <img src="img/escenario.webp" alt="Escenario Principal - Gran Final Presencial" class="tarjeta-img">
                 </div>
+                <!-- 9. Texto descriptivo inferior que acompaña a la imagen del escenario -->
                 <p>Gran Final Presencial</p>
             </div>
 
-            <!-- 9. Segundo elemento o tarjeta individual de la galería -->
+            <!-- 10. Segundo elemento o tarjeta individual de la galería: Zona de Competencia -->
             <div class="item-galeria">
                 <div class="caja-imagen-galeria">
-                    <!-- Espacio visual simulado para la segunda foto -->
-                    <div style="background: #111; height: 200px; display: flex; align-items: center; justify-content: center; color: #00ffff; font-weight: bold;">[ Zona de Competencia ]</div>
+                    <!-- Insertamos la foto de los jugadores en acción con la ruta exacta de la carpeta img -->
+                    <img src="img/zona de competencia.webp" alt="Zona de Competencia - Jugadores en acción" class="tarjeta-img">
                 </div>
+                <!-- 11. Texto descriptivo inferior de la zona de juego -->
                 <p>Jugadores en acción</p>
             </div>
 
-            <!-- 10. Tercer elemento o tarjeta individual de la galería -->
+            <!-- 12. Tercer elemento o tarjeta individual de la galería: Premiación -->
             <div class="item-galeria">
                 <div class="caja-imagen-galeria">
-                    <!-- Espacio visual simulado para la tercera foto -->
-                    <div style="background: #111; height: 200px; display: flex; align-items: center; justify-content: center; color: #00ffff; font-weight: bold;">[ Premiación ]</div>
+                    <!-- Insertamos la foto de la entrega de trofeos utilizando la misma clase unificada de estilos -->
+                    <img src="img/premiacion.jpg" alt="Premiación - Entrega de trofeos" class="tarjeta-img">
                 </div>
+                <!-- 13. Texto descriptivo inferior de la premiación -->
                 <p>Entrega de trofeos</p>
             </div>
 
-        <!-- 11. Cerramos el contenedor de la galería -->
+        <!-- 14. Cerramos el contenedor principal de la galería -->
         </div>
     </section>
 
-<!-- 12. Cerramos la etiqueta principal del contenido -->
+<!-- 15. Cerramos la etiqueta principal del contenido del sitio -->
 </main>
 
 <?php
-// 13. Incluimos el archivo del pie de página (footer.php) para cerrar la estructura del documento con los créditos y scripts
+// 16. Incluimos el archivo del pie de página (footer.php) para cerrar la estructura del documento con los créditos y enlaces
 include 'footer.php';
 ?>
