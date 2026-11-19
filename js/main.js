@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             titulo: "God of War Ragnarök",
             descripcion: "Combates cerrados de habilidad, reflejos y estrategia pura en la arena 1v1.",
             premio: "Premio: $800 USD",
-            imagen: "img/juego-2.AVIF"
+            imagen: "img/juego-2.webp"
         },
         {
             titulo: "FC27",
